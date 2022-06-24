@@ -10,7 +10,7 @@ characterSet = {
 
 // Write password to the #password input
 function writePassword() {
-  // var password = generatePassword();
+  var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   var pwLength = prompt("How long would you like your password? 8-128");
@@ -32,6 +32,10 @@ function writePassword() {
   var specialCase = prompt("Would you like to use special characters? y/n");
 
   alert("You chose " + numberCase);
+  
+  if (lowerCase === "y") {
+    generatePassword(+ characterSet.lowerCaseCharacters)
+  };
 
   passwordText.value = password;
 
