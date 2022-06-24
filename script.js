@@ -8,9 +8,11 @@ characterSet = {
   specialCharacters: "`~!@#$%^&*()"
 }
 
+
+
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  // var password = generatePassword(pass);
   var passwordText = document.querySelector("#password");
 
   var pwLength = prompt("How long would you like your password? 8-128");
@@ -32,10 +34,33 @@ function writePassword() {
   var specialCase = prompt("Would you like to use special characters? y/n");
 
   alert("You chose " + numberCase);
+
+  var pass = "";
+
+  var passString = "";
   
   if (lowerCase === "y") {
-    generatePassword(+ characterSet.lowerCaseCharacters)
+    passString.concat(characterSet.lowerCaseCharacters)
   };
+
+  if (upperCase === "y") {
+    passString.concat(characterSet.upperCaseCharacters)
+  };
+
+  if (numberCase === "y") {
+    passString.concat(characterSet.numberCharacters)
+  };
+
+  if (specialCase === "y") {
+    passString.concat(characterSet.specialCharacters)
+  };
+    console.log(passString);
+  for (let i = 1; i <= Number(pwLength); i++) {
+    var char = Math.floor(Math.random() * passString.length + 1);
+    pass += passString.charAt(char);
+  }
+
+  console.log(pass);
 
   passwordText.value = password;
 
