@@ -2,6 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
+    var password = "";
     var lowerCase;
     var upperCase;
     var numberCase;
@@ -59,26 +60,26 @@ function generatePassword() {
         
     }
 
+    function getRandomChar() {
+        return passwordChar[Math.floor(Math.random() * passwordChar.length)];
+    }
 
 
-
-
+    function passwordGen() {
+        for(let i = 0; i < passwordLength; i++){
+            password += getRandomChar();
+        }
+        return password;
+    }
 
     promptLength();
     characterTypes();
-    console.log(passwordChar)
-  
-    
-
-
-        
-    
-    // 4. pw is then written to page    
-    
-    
-    
-    
-//     return generated password
+    passwordGen();
+    // getRandomChar();
+    console.log(passwordGen())
+    return password;
+    // 4. pw is then written to page        
+    //     return generated password
 }
 
 // Write password to the #password input
