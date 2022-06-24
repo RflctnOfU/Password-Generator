@@ -14,8 +14,27 @@ function generatePassword() {
         return promptLength();
         } 
     }
+
+function characterTypes() {
+    var lowerCase = confirm("Would you like to include lower case letters?");
+
+    var upperCase = confirm("Would you like to include upper case letters?");
+
+    var numberCase = confirm("Would you like to include numbers?");
+
+    var symbolCase = confirm("Would you like to include symbolss?");
+
+    while ((lowerCase === false) && (upperCase === false) && (numberCase === false) && (symbolCase === false)) {
+        alert("You must select at least one character type.")
+        return characterTypes();
+    }
+}
+
+
+
+
     promptLength();
-    
+    characterTypes();
 
 
   
