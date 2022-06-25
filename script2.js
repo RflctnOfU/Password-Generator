@@ -69,7 +69,7 @@ function generatePassword() {
         for(let i = 0; i < passwordLength; i++){
             passwordRandom += getRandomChar();
         }
-        return passwordRandom;
+        // return passwordRandom;
     }
 
     // run functions and return password
