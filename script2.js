@@ -33,7 +33,7 @@ function generatePassword() {
 
         numberCase = confirm("Would you like to include numbers?");
 
-        symbolCase = confirm("Would you like to include symbolss?");
+        symbolCase = confirm("Would you like to include symbols?");
 
         while ((lowerCase === false) && (upperCase === false) && (numberCase === false) && (symbolCase === false)) {
             alert("You must select at least one character type.")
