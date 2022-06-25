@@ -22,7 +22,6 @@ function generatePassword() {
         alert("Error, value out of range.");
         return promptLength();
         } 
-
     }
 
     // confirm character types - lower, upper, numeric, symbols, and validate that at least one was selected
@@ -56,20 +55,18 @@ function generatePassword() {
         if (symbolCase === true) {
             passwordChar += symbolCaseChar;
         }
-        
-    }
-
-    // random selector of Characters
-    function getRandomChar() {
-        return passwordChar[Math.floor(Math.random() * passwordChar.length)];
     }
 
     // generate the password
     function passwordGen() {
+        // random selector
+        function getRandomChar() {
+            return passwordChar[Math.floor(Math.random() * passwordChar.length)];
+        }
+
         for(let i = 0; i < passwordLength; i++){
             passwordRandom += getRandomChar();
         }
-        // return passwordRandom;
     }
 
     // run functions and return password
@@ -83,9 +80,7 @@ function generatePassword() {
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
-  
     passwordText.value = password;
-
 }
 
 // Add event listener to generate button
