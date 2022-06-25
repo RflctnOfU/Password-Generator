@@ -1,8 +1,9 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// generator code
 function generatePassword() {
-    var password = "";
+    var passwordRandom = "";
     var lowerCase;
     var upperCase;
     var numberCase;
@@ -13,8 +14,8 @@ function generatePassword() {
     var upperCaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var numberCaseChar = "0123456789";
     var symbolCaseChar = "~`!@#$%^&*()";
-    // 1. prompt user
-        // pw length - error if outside range to validate
+   
+    // pw length - error if outside range to validate
     function promptLength() {
         passwordLength = parseInt(prompt("Select a password length 8-128."));
         while ((passwordLength < 8) || (passwordLength > 128)) {
@@ -25,7 +26,6 @@ function generatePassword() {
     }
 
     // confirm character types - lower, upper, numeric, symbols, and validate that at least one was selected
-
     function characterTypes() {
         lowerCase = confirm("Would you like to include lower case letters?");
 
@@ -41,7 +41,6 @@ function generatePassword() {
         }
 
         // adding selections of character types to possibile choices for random selection
-
         if (lowerCase === true) {
             passwordChar += lowerCaseChar;
         }
@@ -60,26 +59,24 @@ function generatePassword() {
         
     }
 
+    // random selector of Characters
     function getRandomChar() {
         return passwordChar[Math.floor(Math.random() * passwordChar.length)];
     }
 
-
+    // generate the password
     function passwordGen() {
         for(let i = 0; i < passwordLength; i++){
-            password += getRandomChar();
+            passwordRandom += getRandomChar();
         }
-        return password;
+        return passwordRandom;
     }
 
+    // run functions and return password
     promptLength();
     characterTypes();
     passwordGen();
-    // getRandomChar();
-    console.log(passwordGen())
-    return password;
-    // 4. pw is then written to page        
-    //     return generated password
+    return passwordRandom;
 }
 
 // Write password to the #password input
