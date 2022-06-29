@@ -4,10 +4,6 @@ var generateBtn = document.querySelector("#generate");
 // generator code
 function generatePassword() {
     var passwordRandom = "";
-    var lowerCase;
-    var upperCase;
-    var numberCase;
-    var symbolCase;
     var passwordLength;
     var passwordChar = "";
     var lowerCaseChar = "abcdefghijklmnopqrstuvwxyz";
@@ -26,13 +22,13 @@ function generatePassword() {
 
     // confirm character types - lower, upper, numeric, symbols, and validate that at least one was selected
     function characterTypes() {
-        lowerCase = confirm("Would you like to include lower case letters?");
+        var lowerCase = confirm("Would you like to include lower case letters?");
 
-        upperCase = confirm("Would you like to include upper case letters?");
+        var upperCase = confirm("Would you like to include upper case letters?");
 
-        numberCase = confirm("Would you like to include numbers?");
+        var numberCase = confirm("Would you like to include numbers?");
 
-        symbolCase = confirm("Would you like to include symbols?");
+        var symbolCase = confirm("Would you like to include symbols?");
 
         while ((lowerCase === false) && (upperCase === false) && (numberCase === false) && (symbolCase === false)) {
             alert("You must select at least one character type.")
